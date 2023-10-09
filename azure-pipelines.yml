@@ -15,14 +15,8 @@ steps:
   inputs:
     rootFolderOrFile: '$(build.sourcesDirectory)'
     includeRootFolder: false
+    
 - task: PublishBuildArtifacts@1
-
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: 'artifact'
-    Contents: '**'
-    TargetFolder: '$(build.artifactstagingdirectory)/artifact'
-- task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Pipeline.Workspace)'
     artifact: 'Pipeline-artifact'
